@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="format-detection" content="email=no"/>
+	<title>un</title>
+	
+</head>	
+<body>
+	<div id="box">
+		<input type="text" v-model="txt" @keyup.enter="show()" >
+		<p>{{txt}}</p>
+	</div>
+	<script src="lib/vue1.min.js"></script>
+	<script>
+        var vue=new Vue({
+        	el:"#box",
+        	data:{
+        		txt:"hellow"
+        	},
+        	methods:{
+        		show:function(){
+        			  alert(this.txt)
+        		}
+        	}
+        }) 
+	</script>
+</body> 
+</html>

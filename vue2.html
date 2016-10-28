@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="format-detection" content="email=no"/>
+	<title>un</title>
+	
+</head>	
+<body>
+	<div id="box">
+		
+	    <ul v-for="item in list">
+	    	<li><a :href="item.url">{{item.txt}}</a></li>
+	    	
+	    </ul>
+	</div>
+	<script src="lib/vue1.min.js"></script>
+	<script>
+        var vue=new Vue({
+        	  el:"#box",
+        	  data:{
+         	  	 list:[
+                    {txt:"百度",url:"http://www.baidu.com"},
+                    {txt:"腾讯",url:"http://www.tengxun.com"},
+                    {txt:"搜狐",url:"http://www.souhu.com"},
+                    {txt:"网易",url:"http://www.wangyi.com"}
+
+         	  	 ]
+         	  }
+        })
+	</script>
+</body>
+</html>

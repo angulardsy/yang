@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="format-detection" content="email=no"/>
+	<title>un</title>
+	
+</head>	
+<body>
+	<div id="box">
+		<input type="text" v-model="txt" @keyup.enter='show()'>
+		<h3>您输入的结果：{{result}}</h3>
+		<ul>
+			<li v-for="item in list">
+				<p>{{item.title}}
+                   <button @click="remove($index)">x</button>
+				</p>
+			</li>
+		</ul>
+	</div>
+	<script src="lib/vue1.min.js"></script>
+	<script>
+         var obj={
+         	txt:"",
+         	list:[
+              {
+              	title:'第一条数据'
+              }
+         	]
+         };
+         var fns={
+         	show:function(){
+         		var txt=this.txt;
+         		if(txt){
+         			txt=this.txt.trim();
+         			this.list.push({
+         				title:txt
+         			});
+         			this.txt=""
+         		}
+         	},
+         	remove:function(i){
+         		  this.list.splice(i,1)
+         	}
+         }
+var vue=new Vue({
+	el:"#box",
+	data:obj,
+	methods:fns,
+	computed:{
+		result:function(){
+			return this.txt*1
+		}
+	}
+})
+	</script>
+</body>
+</html>
